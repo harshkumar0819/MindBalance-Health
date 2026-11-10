@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindBalance - Student Wellness Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand">MindBalance</a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#form-section">Prediction</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero" id="home">
+      <h1>Student Wellness Prediction</h1>
+      <p>Understand how your digital habits, study routine, sleep and lifestyle relate to your predicted mental health score.</p>
+    </section>
+
+    <section class="info-cards">
+      <div class="info-card">
+        <div class="info-icon">01</div>
+        <h3>Student Profile</h3>
+        <p>Enter your basic information.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">02</div>
+        <h3>Digital Habits</h3>
+        <p>Share your daily screen usage.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">03</div>
+        <h3>Lifestyle</h3>
+        <p>Provide sleep and activity details.</p>
+      </div>
+    </section>
+
+    <div class="section-title" id="form-section">
+      <h2>Enter Your Details</h2>
+      <p>Complete all the fields to generate your prediction.</p>
+    </div>
+
+    <div class="main-grid">
+
+      <section class="form-panel">
+        <form id="predict-form" novalidate>
+
+          <fieldset class="group" id="profile-section">
+            <legend>1. Personal Information</legend>
+            <div class="grid grid-3">
+
+              <div class="field">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="10" max="100" step="1" required placeholder="e.g. 21">
+                <span class="error-msg" data-for="age"></span>
+              </div>
+
+              <div class="field">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                  <option value="" disabled selected>Select gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+                <span class="error-msg" data-for="gender"></span>
+              </div>
+
+              <div class="field">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" list="country-list" required placeholder="e.g. India" autocomplete="off">
+                <datalist id="country-list">
+                  <option value="India"></option>
+                  <option value="USA"></option>
+                  <option value="Canada"></option>
+                  <option value="Australia"></option>
+                  <option value="UK"></option>
+                  <option value="Germany"></option>
+                  <option value="Mexico"></option>
+                  <option value="Turkey"></option>
+                  <option value="France"></option>
+                </datalist>
+                <span class="error-msg" data-for="country"></span>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <fieldset class="group" id="habits-section">
+            <legend>2. Academic and Digital Habits</legend>
+            <div class="grid grid-2">
+
+              <div class="field">
+                <label for="academic_level">Academic Level</label>
+                <select id="academic_level" name="academic_level" required>
+                  <option value="" disabled selected>Select level</option>
+                  <option value="High School">High School</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                  <option value="Graduate">Graduate</option>
+                </select>
+                <span class="error-msg" data-for="academic_level"></span>
+              </div>
+
+              <div class="field">
+                <label for="most_used_platform">Most Used Platform</label>
+                <select id="most_used_platform" name="most_used_platform" required>
+                  <option value="" disabled selected>Select platform</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Snapchat">Snapchat</option>
+                  <option value="Twitter">Twitter</option>
+                  <option value="YouTube">YouTube</option>
+                  <option value="TikTok">TikTok</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="LINE">LINE</option>
+                  <option value="KakaoTalk">KakaoTalk</option>
+                  <option value="VKontakte">VKontakte</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="WeChat">WeChat</option>
+                </select>
+                <span class="error-msg" data-for="most_used_platform"></span>
+              </div>
+
+              <div class="field">
+                <label for="purpose_of_use">Primary Purpose</label>
+                <select id="purpose_of_use" name="purpose_of_use" required>
+                  <option value="" disabled selected>Select purpose</option>
+                  <option value="Networking">Networking</option>
+                  <option value="Education">Education</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="News">News</option>
+                </select>
+                <span class="error-msg" data-for="purpose_of_use"></span>
+              </div>
+
+              <div class="field">
+                <label for="avg_daily_usage_hours">Daily Screen Time (Hours)</label>
+                <input type="number" id="avg_daily_usage_hours" name="avg_daily_usage_hours" min="0" max="24" step="0.1" required placeholder="e.g. 4.5">
+                <span class="error-msg" data-for="avg_daily_usage_hours"></span>
+              </div>
+
+              <div class="field">
+                <label for="daily_unlocks">Daily Phone Unlocks</label>
+                <input type="number" id="daily_unlocks" name="daily_unlocks" min="0" step="1" required placeholder="e.g. 80">
+                <span class="error-msg" data-for="daily_unlocks"></span>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <fieldset class="group" id="lifestyle-section">
+            <legend>3. Lifestyle and Stress</legend>
+            <div class="grid grid-3">
+
+              <div class="field">
+                <label for="study_hours">Study Hours per Day</label>
+                <input type="number" id="study_hours" name="study_hours" min="0" max="24" step="0.1" required placeholder="e.g. 3">
+                <span class="error-msg" data-for="study_hours"></span>
+              </div>
+
+              <div class="field">
+                <label for="physical_activity_hours">Physical Activity (Hours)</label>
+                <input type="number" id="physical_activity_hours" name="physical_activity_hours" min="0" max="24" step="0.1" required placeholder="e.g. 1.5">
+                <span class="error-msg" data-for="physical_activity_hours"></span>
+              </div>
+
+              <div class="field">
+                <label for="sleep_hours_per_night">Sleep Hours per Night</label>
+                <input type="number" id="sleep_hours_per_night" name="sleep_hours_per_night" min="0" max="24" step="0.1" required placeholder="e.g. 7">
+                <span class="error-msg" data-for="sleep_hours_per_night"></span>
+              </div>
+
+              <div class="field field-span">
+                <label for="stress_level">Perceived Stress Level</label>
+                <div class="segmented" id="stress_level_group" data-name="stress_level">
+                  <button type="button" class="seg-btn" data-value="Low">Low</button>
+                  <button type="button" class="seg-btn" data-value="Medium">Medium</button>
+                  <button type="button" class="seg-btn" data-value="High">High</button>
+                  <button type="button" class="seg-btn" data-value="Very High">Very High</button>
+                </div>
+                <input type="hidden" id="stress_level" name="stress_level" required>
+                <span class="error-msg" data-for="stress_level"></span>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <span class="btn-label">Predict Wellness Score</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+
+        </form>
+      </section>
+
+      <aside class="result-panel" id="prediction-section">
+        <h2>Prediction Result</h2>
+        <p class="result-description">Your predicted wellness score will appear here.</p>
+
+        <div class="result-inner" id="result-inner">
+
+          <div class="state state-idle" id="state-idle">
+            <div class="result-placeholder">?</div>
+            <p class="idle-label">No Prediction Yet</p>
+            <p class="idle-copy">Fill in the form and click the prediction button to see your result.</p>
+          </div>
+
+          <div class="state state-loading" id="state-loading" hidden>
+            <div class="pulse-ring"></div>
+            <p class="loading-label">Analysing your details...</p>
+            <p class="loading-copy">Please wait while the model generates your prediction.</p>
+          </div>
+
+          <div class="state state-result" id="state-result" hidden>
+            <div class="score-readout">
+              <span class="score-number" id="score-number">0.0</span>
+              <span class="score-max">/10</span>
+            </div>
+            <p class="score-band" id="score-band">Your result</p>
+            <p class="score-context" id="score-context"></p>
+            <button type="button" class="reset-btn" id="reset-btn">Try Again</button>
+          </div>
+
+          <div class="state state-error" id="state-error" hidden>
+            <div class="error-icon">!</div>
+            <p class="error-copy" id="error-copy"></p>
+            <button type="button" class="reset-btn" id="error-retry-btn">Try Again</button>
+          </div>
+
+        </div>
+
+        <div class="result-note">
+          This prediction is for educational purposes only and is not a medical diagnosis.
+        </div>
+      </aside>
+
+    </div>
+
+    <section class="about-section" id="about">
+      <h2>About MindBalance</h2>
+      <p>MindBalance is a student digital wellness prediction project that uses machine learning to estimate a mental health score based on digital habits, academic activities, sleep, physical activity and perceived stress.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 MindBalance | Student Digital Wellness Prediction System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
